@@ -10,11 +10,13 @@ original_graph = [[0, 7, sys.maxsize, 8],
                   [sys.maxsize, sys.maxsize, sys.maxsize, 0]]
 
 def measure_time(func, graph):
+    # Time the execution of a function
     start_time = timeit.default_timer()
     func(copy.deepcopy(graph))
     end_time = timeit.default_timer()
     return end_time - start_time
 
+# Measure and print execution times for both algorithms
 time_imperative = measure_time(imperative_floyd, original_graph)
 time_recursive = measure_time(recursive_floyd, original_graph)
 
